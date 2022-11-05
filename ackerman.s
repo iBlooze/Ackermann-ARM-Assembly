@@ -11,7 +11,7 @@
 // r0 contains a number m
 // r1 contains a number n
 ackermann:
-	push	{r1-r2, fp, lr}
+	push		{r1-r2, fp, lr}
 	add		fp, sp, #8
 	sub		sp, sp, #12
 
@@ -27,7 +27,7 @@ check2:
 	blt		illegalParameter
 	bne		check3			//go to check 3
 	
-    blt 	epilogue
+	blt		epilogue
 
 	sub		r0, r0, #1		//param1 = m - 1
 	mov		r1, #1			//move 1 to r1 
@@ -35,17 +35,17 @@ check2:
 	b		epilogue
 
 check3:
-    mov 	r2,r0
-    sub 	r1,r1,#1
+	mov		r2,r0
+	sub		r1,r1,#1
 	bl		ackermann				//make call ack(m, n - 1)
 
-	mov 	r1,r0
-    sub 	r0,r2,#1
-    bl 		ackermann
+	mov		r1,r0
+	sub		r0,r2,#1
+	bl 		ackermann
 	b 		epilogue	
 
 illegalParameter:
-	mov 	r0, #-1
+	mov		r0, #-1
 
 epilogue:
 	sub		sp, fp, #8		
