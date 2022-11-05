@@ -1,12 +1,12 @@
-.arch armv7-a
-.text
-.align	2
-.global	ackermann
-.arch armv7-a
-syntax unified
-.arm
-.fpu vfpv3-d16
-.type	ackermann, %function
+	.arch armv7-a
+	.text
+	.align	2
+	.global	ackermann
+	.arch armv7-a
+	.syntax unified
+	.arm
+	.fpu vfpv3-d16
+	.type	ackermann, %function
 
 // r0 contains a number m
 // r1 contains a number n
